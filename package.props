@@ -1,7 +1,7 @@
 <Project>
 
   <PropertyGroup>
-    <Version>5.11.6</Version>
+    <Version>5.11.7</Version>
     <PackageReleaseNotes>This release is compatible with Core 3.1</PackageReleaseNotes>
   </PropertyGroup>
 

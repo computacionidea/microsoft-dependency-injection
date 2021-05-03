@@ -10,9 +10,9 @@ namespace Unity.Microsoft.DependencyInjection
         private static ServiceProviderFactory _factory;
 
 
-        public static IHostBuilder UseUnityServiceProvider(this IHostBuilder hostBuilder, IUnityContainer container = null, ServiceProviderMode providerMode = ServiceProviderMode.ChildContainerPerProvider)
+        public static IHostBuilder UseUnityServiceProvider(this IHostBuilder hostBuilder, IUnityContainer container = null, ServiceProviderMode mode = ServiceProviderMode.ChildContainerPerProvider)
         {
-            _factory = new ServiceProviderFactory(container);
+            _factory = new ServiceProviderFactory(container, mode);
 
             return hostBuilder.UseServiceProviderFactory<IUnityContainer>(_factory)
                               .ConfigureServices((context, services) =>
@@ -22,9 +22,9 @@ namespace Unity.Microsoft.DependencyInjection
                               });
         }
 
-        public static IWebHostBuilder UseUnityServiceProvider(this IWebHostBuilder hostBuilder, IUnityContainer container = null, ServiceProviderMode providerMode = ServiceProviderMode.ChildContainerPerProvider)
+        public static IWebHostBuilder UseUnityServiceProvider(this IWebHostBuilder hostBuilder, IUnityContainer container = null, ServiceProviderMode mode = ServiceProviderMode.ChildContainerPerProvider)
         {
-            _factory = new ServiceProviderFactory(container);
+            _factory = new ServiceProviderFactory(container, mode);
 
 #if NETCOREAPP1_1
             return hostBuilder.ConfigureServices((services) =>
