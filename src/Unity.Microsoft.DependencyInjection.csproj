@@ -5,6 +5,7 @@
   <PropertyGroup>
     <FileVersion>$(Version).0</FileVersion>
     <AssemblyVersion>$(Version).0</AssemblyVersion>
+	<PackageVersion>$(Version)-idea</PackageVersion>
     <PackageId>Unity.Microsoft.DependencyInjection</PackageId>
     <Description>Unity for Microsoft Dependency Injection framework.</Description>
     <Copyright>Copyright © .NET Foundation and Contributors. All Rights Reserved</Copyright>
