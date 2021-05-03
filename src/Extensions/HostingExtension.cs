@@ -10,7 +10,7 @@ namespace Unity.Microsoft.DependencyInjection
         private static ServiceProviderFactory _factory;
 
 
-        public static IHostBuilder UseUnityServiceProvider(this IHostBuilder hostBuilder, IUnityContainer container = null)
+        public static IHostBuilder UseUnityServiceProvider(this IHostBuilder hostBuilder, IUnityContainer container = null, ServiceProviderMode providerMode = ServiceProviderMode.ChildContainerPerProvider)
         {
             _factory = new ServiceProviderFactory(container);
 
@@ -22,7 +22,7 @@ namespace Unity.Microsoft.DependencyInjection
                               });
         }
 
-        public static IWebHostBuilder UseUnityServiceProvider(this IWebHostBuilder hostBuilder, IUnityContainer container = null)
+        public static IWebHostBuilder UseUnityServiceProvider(this IWebHostBuilder hostBuilder, IUnityContainer container = null, ServiceProviderMode providerMode = ServiceProviderMode.ChildContainerPerProvider)
         {
             _factory = new ServiceProviderFactory(container);
 
